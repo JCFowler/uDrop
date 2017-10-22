@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="uDrop.DrawerView"
+    xmlns:local="clr-namespace:uDrop"
+    Title="Menu Page">
+    <MasterDetailPage.Master>
+        <ContentPage Padding="10" Title="Master" Icon="ic_menu.png">
+            <ContentPage.Content>
+                <StackLayout Margin="2,30,2,2">
+                    <StackLayout Orientation="Horizontal">                    
+                        <Image Source="splash.png" HeightRequest="100" WidthRequest="80"/>
+                        <Label Text="John Fowler" Margin="3,0,0,0" HorizontalOptions="Center" VerticalOptions="Center" FontSize="22"/>
+                    </StackLayout>
+                    <StackLayout x:Name="_stackLayout" VerticalOptions="FillAndExpand" >
+                        <ListView x:Name="menuList" HasUnevenRows="true" ItemSelected="Item_Clicked" HeightRequest="200"/>
+                    </StackLayout>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <local:MainView/>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

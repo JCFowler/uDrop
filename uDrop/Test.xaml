@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="uDrop.Test">
+    <StackLayout>
+        <Entry Placeholder="name" x:Name="name"/>
+        <Entry Placeholder="age" Keyboard="Numeric" x:Name="power"/>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Add" Clicked="add_Clicked"/>
+            <Button Text="Delete" Clicked="delete_Clicked"/>
+            <Button Text="Edit" Clicked="edit_Clicked"/>
+        </StackLayout>
+    <ListView x:Name="_lst"  
+            IsPullToRefreshEnabled="true" 
+            Refreshing="Handle_Refreshing" 
+            ItemsSource="{Binding .}"
+            ItemSelected="Handle_ItemSelected">
+    <ListView.ItemTemplate>
+    <DataTemplate>
+
+    <TextCell Text="{Binding fullname}" Detail="{Binding hardwarePower}" />
+
+    </DataTemplate>
+
+    </ListView.ItemTemplate>
+
+    </ListView>
+    </StackLayout>
+</ContentPage>
