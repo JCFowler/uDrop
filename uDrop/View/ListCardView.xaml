@@ -6,18 +6,18 @@
     Title="All Cards" Icon="ic_collections.png">
     <ContentPage.Content>
         <StackLayout Spacing="10" Padding="10">
-            <Label Text="All Cards"/>
-            <ListView x:Name="cardsList" HasUnevenRows="true">
+            <ListView x:Name="_list" HasUnevenRows="true"   
+                        IsPullToRefreshEnabled="true" 
+                        Refreshing="Handle_Refreshing"
+                        ItemSelected="Handle_ItemSelected">>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout Spacing="5">
-                                    <Label Text="{Binding firstLast}" FontSize="24"/>
-                                    <Label Text="{Binding company}" FontSize="20"/>
-                                    <Label Text="{Binding title}" FontSize="20"/>
-                                    <Label Text="{Binding phone}" FontSize="20"/>
-                                    <Label Text="{Binding email}" FontSize="20"/>
+                                    <Label Text="{Binding firstLast}" FontSize="22"/>
+                                    <Label Text="{Binding phone}" FontSize="16"/>
+                                    <Label Text="{Binding email}" FontSize="16"/>
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>

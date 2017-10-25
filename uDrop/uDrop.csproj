@@ -52,6 +52,9 @@
     <EmbeddedResource Include="View\Welcome Views\AccountSetupView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CardCreateView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -104,6 +107,15 @@
     <Compile Include="View\Welcome Views\AccountSetupView.xaml.cs">
       <DependentUpon>AccountSetupView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Link.cs" />
+    <Compile Include="Model\PickedUp.cs" />
+    <Compile Include="Model\Send.cs" />
+    <Compile Include="Database\CardFire.cs" />
+    <Compile Include="View\CardCreateView.xaml.cs">
+      <DependentUpon>CardCreateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\CardCreateViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="crypto">
