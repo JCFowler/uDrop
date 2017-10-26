@@ -17,7 +17,7 @@
             <Entry x:Name="_company"/>
             <Label Text="Enter your job title."/>
             <Entry x:Name="_title"/>
-            <Button Text="Add Card" Clicked="Add_Clicked" />
+            <Button x:Name="_button"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

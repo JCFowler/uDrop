@@ -55,6 +55,9 @@
     <EmbeddedResource Include="View\CardCreateView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CardSingleView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -115,7 +118,10 @@
     <Compile Include="View\CardCreateView.xaml.cs">
       <DependentUpon>CardCreateView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\CardCreateViewModel.cs" />
+    <Compile Include="View\CardSingleView.xaml.cs">
+      <DependentUpon>CardSingleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ButtonWithBusyIndicator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="crypto">
@@ -161,6 +167,7 @@
     <Folder Include="ViewModel\" />
     <Folder Include="Database\" />
     <Folder Include="View\Welcome Views\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Transition.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Transition.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Transition.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Transition.targets')" />

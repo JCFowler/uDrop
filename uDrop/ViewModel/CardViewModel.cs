@@ -10,13 +10,17 @@ namespace uDrop.ViewModel
     {
         //ObservableCollection<Computer> obs = new ObservableCollection<Computer>();
         CardFire db;
-        DBFire db2;
 
 		public CardViewModel()
 		{
             db = new CardFire();
-            db2 = new DBFire();
 		}
+
+        public async Task<Card> GetByKey(string key)
+        {
+
+            return await db.GetByKey(key);
+        }
 
         public async void Add(Card c)
         {
@@ -28,14 +32,13 @@ namespace uDrop.ViewModel
             await db.Delete(c);
         }
 
-        public async void Edit(Card c)
+        public async void Edit(Card newC, Card oldC)
         {
-            await db.Edit(c);
+            await db.Edit(newC, oldC);
         }
 
         public async Task<List<Card>> GetAll()
         {
-            //return await db2.GetAll();
             return await db.GetAll();
         }
 

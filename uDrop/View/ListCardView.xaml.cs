@@ -52,8 +52,7 @@ namespace uDrop.View
 
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            Card c = (Card)e.SelectedItem;
-            DisplayAlert("Card", c.firstLast + " " + c.phone + " " + c.email + " " + c.company + " " + c.title, "Ok");
+            Navigation.PushAsync(new CardSingleView((Card)e.SelectedItem));
         }
     }
 }

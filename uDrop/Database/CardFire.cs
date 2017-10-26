@@ -18,6 +18,11 @@ namespace uDrop.Database
             firebase = new FirebaseClient("https://udrop-499ca.firebaseio.com/");
         }
 
+        public async Task<Card> GetByKey(string key)
+        {
+            return (Card)await firebase.Child("Card").Child(key).OnceSingleAsync<Card>();
+        }
+
         public async Task Add(Card c)
         {
             await firebase.Child("Card").PostAsync(c);
@@ -28,11 +33,9 @@ namespace uDrop.Database
             await firebase.Child("Card").Child(c.id).DeleteAsync();
         }
 
-        public async Task Edit(Card c)
+        public async Task Edit(Card newC, Card oldC)
         {
-            //var com = firebase.Child("Computer").Child(c.id);
-            //await com.Child("fullname").PutAsync(c.fullname);
-            //await com.Child("hardwarePower").PutAsync(c.hardwarePower);
+            await firebase.Child("Card").Child(oldC.id).PutAsync(newC);
         }
 
         public async Task<List<Card>> GetAll()
